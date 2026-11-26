@@ -3,6 +3,5 @@ FROM ghcr.io/getpaseo/paseo:${PASEO_VERSION}
 
 USER root
 
-RUN curl -fsSL https://claude.ai/install.sh | bash \
-    && curl -fsSL https://chatgpt.com/codex/install.sh | sh \
-    && curl -fsSL https://pi.dev/install.sh | sh
+RUN npm install -g @openai/codex @anthropic-ai/claude-code \
+    && npm install -g --ignore-scripts @earendil-works/pi-coding-agent
