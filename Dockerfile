@@ -12,5 +12,9 @@ RUN apt-get update \
 RUN curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh \
     | RTK_INSTALL_DIR=/usr/local/bin sh
 
+# Antigravity CLI (agy): install system-wide into /usr/local/bin
+RUN curl -fsSL https://antigravity.google/cli/install.sh \
+    | bash -s -- --dir /usr/local/bin
+
 RUN npm install -g @openai/codex @anthropic-ai/claude-code \
     && npm install -g --ignore-scripts @earendil-works/pi-coding-agent
